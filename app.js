@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
 
-app.get('/cors', (req, res) => {
+app.get('/', (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
   res.send({ "msg": "This has CORS enabled 🎈" })
   })
