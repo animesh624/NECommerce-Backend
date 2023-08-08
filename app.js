@@ -17,6 +17,11 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
 
+app.get('/cors', (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.send({ "msg": "This has CORS enabled 🎈" })
+  })
+
 // Route Imports
 const product = require("./routes/productRoute");
 const user = require("./routes/userRoute");
