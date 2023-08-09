@@ -1,11 +1,9 @@
 const app = require("./app");
 const cloudinary = require("cloudinary");
 const connectDatabase = require("./config/database");
-const cors = require('cors')
 require('dotenv').config()
-app.use(cors({
-  origin: "*"
-}));
+const cors = require('cors')
+app.use(cors())
 // Handling Uncaught Exception
 process.on("uncaughtException", (err) => {
   console.log(`Error: ${err.message}`);
